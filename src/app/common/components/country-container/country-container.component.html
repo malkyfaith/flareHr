@@ -1,11 +1,11 @@
 <div class="country-container">
   <app-country-search (onSelectCountry)="showCountry($event)"></app-country-search>
   <div *ngIf="selectedCountry">
-    <mat-toolbar>Selected Country</mat-toolbar>
+    <mat-toolbar color="primary">Country Information</mat-toolbar>
     <app-country-view [country]="selectedCountry"></app-country-view>
   </div>
   <div *ngIf="recentlySearchedCountries && recentlySearchedCountries.length > 0">
-    <mat-toolbar>Recently Searched Country</mat-toolbar>
-    <app-recently-searched-countries [countries]="recentlySearchedCountries"></app-recently-searched-countries>
+    <mat-toolbar color="primary">Recently Searched Country</mat-toolbar>
+    <app-recently-searched-countries [countries]="recentlySearchedCountries" (onSelectCountry)="showCountry($event)"></app-recently-searched-countries>
   </div>
 </div>

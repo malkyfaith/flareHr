@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Country } from '../../models/country';
 
 @Component({
@@ -8,9 +8,14 @@ import { Country } from '../../models/country';
 })
 export class RecentlySearchedCountriesComponent implements OnInit {
   @Input() countries: Country[] = [];
+  @Output() onSelectCountry: any = new EventEmitter<Country>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(selectedCountry: Country) {
+    this.onSelectCountry.emit(selectedCountry);
   }
 
 }

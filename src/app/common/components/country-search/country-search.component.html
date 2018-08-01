@@ -2,6 +2,6 @@
 <div *ngIf="loading">Loading......</div>
 <ul>
   <li *ngFor="let c of filteredCountries" (click)="onSelect(c)">
-    {{c.Name}} --- {{c.Alpha3Code}}
+    {{c.Name}} ({{c.Alpha3Code}})
   </li>
 </ul>

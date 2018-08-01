@@ -18,8 +18,10 @@ export class CountryContainerComponent implements OnInit {
   showCountry(country: Country) {
     this.countryService.getCountries().subscribe((countries: Country[]) => {
       this.selectedCountry = countries.filter(item => item.Alpha3Code === country.Alpha3Code)[0];
-      if (this.recentlySearchedCountries.indexOf(this.selectedCountry) < 0)
-        this.recentlySearchedCountries.push(this.selectedCountry);
+      if (this.recentlySearchedCountries.indexOf(this.selectedCountry) > -1) {
+        this.recentlySearchedCountries.splice(this.recentlySearchedCountries.indexOf(this.selectedCountry), 1);
+      }
+      this.recentlySearchedCountries.unshift(this.selectedCountry);
     })
 
   }

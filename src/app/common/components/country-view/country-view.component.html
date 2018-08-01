@@ -2,7 +2,7 @@
   <mat-card class="example-card" *ngIf="country">
     <mat-card-header>
       <mat-card-title>
-        <h3>{{country.Name}}</h3>
+        <h2>{{country.Name}}</h2>
       </mat-card-title>
     </mat-card-header>
     <div [hidden]="!imageLoader">Loading...</div>
@@ -10,7 +10,7 @@
     <mat-card-content>
       <div>
         <p>
-          Currency name:
+          Currency:
           <span>{{country.CurrencyName}}</span>
         </p>
         <p>
