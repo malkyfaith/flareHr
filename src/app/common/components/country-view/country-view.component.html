@@ -1,0 +1,27 @@
+<div>
+  <mat-card class="example-card" *ngIf="country">
+    <mat-card-header>
+      <mat-card-title>
+        <h3>{{country.Name}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <div [hidden]="!imageLoader">Loading...</div>
+    <img mat-card-image [hidden]="imageLoader" [src]="country.FlagPng" (load)="this.imageLoader = false;" />
+    <mat-card-content>
+      <div>
+        <p>
+          Currency name:
+          <span>{{country.CurrencyName}}</span>
+        </p>
+        <p>
+          Land Area:
+          <span>{{country.Area}}</span>
+        </p>
+        <p>
+          Lon/Lat:
+          <span>{{country.Longitude}}--{{country.Latitude}}</span>
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -11,4 +11,4 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [CountryService],
   declarations: []
 })
-export class ServiceModule { }
+export class ServicesModule { }

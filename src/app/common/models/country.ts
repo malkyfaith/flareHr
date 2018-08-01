@@ -1,12 +1,12 @@
-export interface Country {
+export class Country {
     Name: string;
     Alpha2Code: string;
     Alpha3Code: string;
     NativeName: string;
     Region: string;
     SubRegion: string;
-    Latitude: number;
-    Longitude: number;
+    Latitude: string;
+    Longitude: string;
     Area: number;
     NumericCode: number;
     NativeLanguage: string;

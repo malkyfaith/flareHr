@@ -1,0 +1,7 @@
+<app-type-ahead (outputTxt)="onInput($event)"></app-type-ahead>
+<div *ngIf="loading">Loading......</div>
+<ul>
+  <li *ngFor="let c of filteredCountries" (click)="onSelect(c)">
+    {{c.Name}} --- {{c.Alpha3Code}}
+  </li>
+</ul>
