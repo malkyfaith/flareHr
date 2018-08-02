@@ -4,7 +4,7 @@ import { CountryService } from './country.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Country } from '../models/country';
 
-fdescribe('CountryService', () => {
+describe('CountryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TypeAheadComponent } from './type-ahead.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('TypeAheadComponent', () => {
   let component: TypeAheadComponent;
@@ -8,7 +9,9 @@ describe('TypeAheadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TypeAheadComponent ]
+      declarations: [ TypeAheadComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
     })
     .compileComponents();
   }));

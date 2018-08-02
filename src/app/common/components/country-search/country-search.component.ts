@@ -9,7 +9,7 @@ import { Country } from '../../models/country';
   styleUrls: ['./country-search.component.css']
 })
 export class CountrySearchComponent implements OnInit {
-  loading: boolean = false;
+  loading = false;
   @Output() onSelectCountry: any = new EventEmitter<Country>();
   filteredCountries: Country[] = [];
   constructor(private countryService: CountryService) { }
@@ -21,11 +21,11 @@ export class CountrySearchComponent implements OnInit {
     if (val.length >= 3) {
       this.loading = true;
       this.countryService.getCountries().subscribe((countries: Country[]) => {
-        this.filteredCountries = countries.filter((item:Country) => item.Name.toLowerCase().indexOf(val.toLowerCase()) > -1).slice(0, 9);
+        this.filteredCountries = countries.filter((item: Country) => item.Name.toLowerCase().indexOf(val.toLowerCase()) > -1).slice(0, 9);
         this.loading = false;
-      })
+      });
     }
-    if(val.length == 0) {
+    if (val.length === 0) {
       this.filteredCountries = [];
       this.onSelectCountry.emit([]);
     }
